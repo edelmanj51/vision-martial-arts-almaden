@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Schedule | Vision Martial Arts Almaden Martial Arts in San Jose</title>
+  <meta name="description" content="View the weekly class schedule at Vision Martial Arts Almaden in San Jose. Find times for kids, teens, and adult Karate &amp; Karate classes.">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,'Helvetica Neue',Arial,sans-serif;color:#1a1a2e;line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{cursor:pointer;border:none;outline:none;font-family:inherit}
+    ul{list-style:none}
+    :root{
+      --primary:        #ED1C24;
+      --primary-dark:   color-mix(in srgb, #ED1C24 80%, black);
+      --secondary:      #1A1A1A;
+      --secondary-dark: color-mix(in srgb, #1A1A1A 80%, black);
+      --secondary-light:color-mix(in srgb, #1A1A1A 15%, white);
+      --red:var(--primary);--red-dark:var(--primary-dark);--blue:var(--secondary);--blue-dark:var(--secondary-dark);--blue-light:var(--secondary-light);
+      --dark:#0f172a;--dark-2:#1e293b;--gray:#64748b;
+      --gray-light:#e2e8f0;--light:#f8fafc;--white:#ffffff;
+      --radius:8px;--radius-lg:12px;
+      --shadow:0 4px 20px rgba(0,0,0,.10);--shadow-lg:0 8px 40px rgba(0,0,0,.15);
+      --transition:all .2s ease
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:var(--radius);font-size:16px;font-weight:700;text-align:center;transition:var(--transition);cursor:pointer;white-space:nowrap}
+    .btn-primary{background:var(--red);color:var(--white);border:2px solid var(--red)}
+    .btn-primary:hover{background:var(--red-dark);border-color:var(--red-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+    .btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7)}
+    .btn-ghost:hover{background:var(--white);color:var(--dark);transform:translateY(-2px)}
+    /* ── Header ── */
+    #header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);box-shadow:0 2px 20px rgba(0,0,0,.07);transition:box-shadow .3s}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+    .logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:900;color:var(--dark);white-space:nowrap;letter-spacing:-.4px;flex-shrink:0}
+    .logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .logo-icon svg{width:22px;height:22px;fill:white}
+    #main-nav{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+    #main-nav>a,.nav-dropdown>a{padding:8px 13px;border-radius:6px;font-weight:600;font-size:15px;color:var(--dark-2);transition:var(--transition);display:flex;align-items:center;gap:4px}
+    #main-nav>a:hover,.nav-dropdown>a:hover{background:var(--light);color:var(--blue)}
+    .nav-dropdown{position:relative}
+    .nav-dropdown>a::after{content:'▾';font-size:10px;opacity:.7}
+    .dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);background:var(--white);border-radius:10px;box-shadow:var(--shadow-lg);min-width:210px;padding:8px;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+    .nav-dropdown.open .dropdown-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+    .dropdown-menu a{display:block;padding:10px 14px;border-radius:6px;font-size:14px;font-weight:500;color:var(--dark-2);transition:var(--transition)}
+    .dropdown-menu a:hover{background:var(--light);color:var(--blue)}
+    .header-cta{padding:10px 22px;font-size:15px;flex-shrink:0}
+    .nav-toggle{display:none;background:none;border:none;padding:8px;flex-direction:column;gap:5px}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--dark);transition:.3s;border-radius:2px}
+    .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle.active span:nth-child(2){opacity:0}
+    .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    @media(max-width:900px){
+      #main-nav{display:none;flex-direction:column;align-items:flex-start;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:12px 20px 20px;box-shadow:var(--shadow-lg);border-top:1px solid var(--gray-light);gap:2px}
+      #main-nav.open{display:flex}
+      #main-nav>a,.nav-dropdown>a{width:100%}
+      .nav-dropdown .dropdown-menu{position:static;opacity:1;pointer-events:all;transform:none;box-shadow:none;border-left:3px solid var(--blue-light);border-radius:0;padding:4px 0 4px 12px;min-width:auto}
+      .nav-toggle{display:flex}
+      .header-cta{display:none}
+    }
+    /* ── Page banner ── */
+    .page-banner{background:linear-gradient(135deg,#07101e 0%,#1a3a6e 100%);color:white;padding:130px 24px 64px;text-align:center}
+    .page-banner h1{font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:14px}
+    .page-banner p{font-size:18px;opacity:.8;max-width:600px;margin:0 auto}
+    /* ── Schedule section ── */
+    #schedule{padding:72px 24px}
+    .schedule-intro{text-align:center;max-width:680px;margin:0 auto 52px}
+    .schedule-intro h2{font-size:clamp(26px,3.5vw,38px);font-weight:900;color:var(--dark);margin-bottom:12px}
+    .schedule-intro p{font-size:17px;color:var(--gray)}
+    .schedule-note{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);color:var(--blue-dark);font-size:14px;font-weight:600;padding:8px 16px;border-radius:20px;margin-top:14px}
+    /* ── Program tabs ── */
+    .prog-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+    .prog-tab{padding:9px 20px;border-radius:20px;font-size:14px;font-weight:600;border:2px solid var(--gray-light);background:var(--white);color:var(--gray);cursor:pointer;transition:var(--transition)}
+    .prog-tab.active,.prog-tab:hover{border-color:var(--blue);background:var(--blue);color:var(--white)}
+    /* ── Schedule table ── */
+    .schedule-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius-lg);box-shadow:var(--shadow);max-width:1100px;margin:0 auto}
+    table.sched{width:100%;border-collapse:collapse;background:var(--white);min-width:640px}
+    table.sched thead th{background:var(--dark);color:var(--white);padding:16px 14px;font-size:14px;font-weight:700;text-align:center;letter-spacing:.4px}
+    table.sched thead th:first-child{text-align:left;width:160px;background:#07101e}
+    table.sched tbody tr:nth-child(even){background:var(--light)}
+    table.sched tbody tr:hover{background:#e8f0fe}
+    table.sched td{padding:15px 14px;font-size:14px;color:var(--dark-2);border-bottom:1px solid var(--gray-light);vertical-align:top;text-align:center}
+    table.sched td:first-child{font-weight:700;color:var(--dark);text-align:left;border-right:1px solid var(--gray-light);background:inherit}
+    .time-slot{display:inline-block;background:var(--blue-light);color:var(--blue-dark);border-radius:4px;padding:3px 8px;font-size:12px;font-weight:600;margin:2px 0;white-space:nowrap}
+    .time-slot.kids{background:#fef3c7;color:#92400e}
+    .time-slot.teens{background:#d1fae5;color:#065f46}
+    .time-slot.adult{background:var(--blue-light);color:var(--blue-dark)}
+    .time-slot.comp{background:#fce7f3;color:#9d174d}
+    .time-empty{color:var(--gray);font-size:13px;opacity:.5}
+    /* ── Legend ── */
+    .legend{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:24px auto 0;max-width:700px}
+    .legend-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--gray)}
+    .legend-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+    /* ── Private lessons callout ── */
+    .private-band{background:var(--light);border-top:1px solid var(--gray-light);padding:56px 24px;text-align:center}
+    .private-band h2{font-size:clamp(22px,3vw,32px);font-weight:900;color:var(--dark);margin-bottom:10px}
+    .private-band p{font-size:16px;color:var(--gray);max-width:520px;margin:0 auto 28px}
+    /* ── CTA ── */
+    .sched-cta{background:linear-gradient(135deg,#07101e,#1a3a6e);padding:80px 24px;text-align:center;color:white}
+    .sched-cta h2{font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:14px}
+    .sched-cta p{font-size:18px;opacity:.8;margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto}
+    .cta-pair{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    @media(max-width:480px){.cta-pair{flex-direction:column;align-items:stretch}.cta-pair .btn{width:100%}}
+    /* ── Scroll reveal ── */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    /* ── Footer ── */
+    #footer{background:#06101e;color:rgba(255,255,255,.72);padding:64px 24px 28px}
+    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:48px;max-width:1200px;margin:0 auto 52px}
+    @media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand .logo{color:white;margin-bottom:16px}
+    .footer-brand p{font-size:14px;line-height:1.75;opacity:.65;margin-bottom:22px}
+    .social-links{display:flex;gap:10px}
+    .social-link{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+    .social-link:hover{background:var(--blue)}
+    .social-link svg{width:17px;height:17px;fill:white}
+    .footer-col h3{font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:18px}
+    .footer-col ul li{margin-bottom:10px}
+    .footer-col ul li a{font-size:14px;transition:color .2s}
+    .footer-col ul li a:hover{color:white}
+    .footer-contact-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:14px;line-height:1.55}
+    .footer-contact-row svg{width:16px;height:16px;fill:#60a5fa;flex-shrink:0;margin-top:2px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.09);padding-top:24px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .footer-bottom p{font-size:13px;opacity:.55}
+    .footer-legal{display:flex;gap:20px}
+    .footer-legal a{font-size:13px;opacity:.45;transition:opacity .2s}
+    .footer-legal a:hover{opacity:1}
+    /* ── Modals ── */
+    .modal-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease}
+    .modal-overlay.open{opacity:1;pointer-events:all}
+    .modal-box{background:var(--white);border-radius:16px;padding:44px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.95) translateY(20px);transition:transform .3s ease;position:relative}
+    .modal-overlay.open .modal-box{transform:scale(1) translateY(0)}
+    .modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:var(--light);border:none;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;color:var(--gray);cursor:pointer;transition:var(--transition)}
+    .modal-close:hover{background:var(--gray-light);color:var(--dark)}
+    .modal-title{font-size:24px;font-weight:800;color:var(--dark);margin-bottom:6px}
+    .modal-sub{font-size:15px;color:var(--gray);margin-bottom:28px}
+    .modal-form .field{margin-bottom:16px}
+    .modal-form label{display:block;font-size:14px;font-weight:600;color:var(--dark-2);margin-bottom:6px}
+    .modal-form input,.modal-form select{width:100%;padding:12px 14px;border-radius:var(--radius);border:1.5px solid var(--gray-light);font-size:15px;font-family:inherit;color:var(--dark);background:var(--white);transition:border-color .2s;appearance:none}
+    .modal-form input:focus,.modal-form select:focus{outline:none;border-color:var(--blue)}
+    .modal-consent{font-size:12px;color:var(--gray);margin:10px 0 20px;line-height:1.55}
+    .modal-consent a{color:var(--blue)}
+    .modal-submit{width:100%;padding:15px;background:var(--blue);color:white;border:none;border-radius:var(--radius);font-size:17px;font-weight:700;cursor:pointer;transition:var(--transition);font-family:inherit}
+    .modal-submit:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,99,235,.35)}
+    .modal-success{text-align:center;padding:36px 20px;display:none}
+    .success-icon{font-size:56px;margin-bottom:16px}
+    .success-title{font-size:24px;font-weight:800;color:var(--dark);margin-bottom:10px}
+    .success-body{color:var(--gray);font-size:16px;line-height:1.6}
+    @media(max-width:768px){.modal-box{padding:28px 20px}}
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="brand_assets/logo.png" alt="" aria-hidden="true" height="48" style="height:48px;width:auto;display:block">
+      </a>
+      <nav id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#" onclick="openModal('modal-kit');return false">Pricing</a>
+        <div class="nav-dropdown">
+          <a href="programs.html">Programs</a>
+          <div class="dropdown-menu">
+            <a href="program-1.html">Kid's Martial Arts</a>
+            <a href="program-2.html">Teen's Martial Arts</a>
+            <a href="program-3.html">Adult Martial Arts</a>
+
+            <a href="program-4.html">After-School Program</a>
+
+            
+
+            
+          </div>
+        </div>
+        <a href="quick-tour.html">Quick Tour</a>
+        <div class="nav-dropdown">
+          <a href="#">More</a>
+          <div class="dropdown-menu">
+            <a href="schedules.html">Member Schedules</a>
+            <a href="news.html">News</a>
+          </div>
+        </div>
+      </nav>
+      <button class="btn btn-primary header-cta" onclick="openModal('modal-trial')">Get Started</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-banner">
+  <h1>Class Schedule</h1>
+  <p>Find the perfect class time for you or your child. New classes added regularly.</p>
+</section>
+
+<section id="schedule">
+  <div class="schedule-intro reveal">
+    <h2>Weekly Training Schedule</h2>
+    <p>All classes are open to enrolled members. Not a member yet? Book a free trial and we'll show you around.</p>
+    <span class="schedule-note">Schedule subject to change — check with the front desk for the latest updates</span>
+  </div>
+
+  
+  <div class="schedule-wrap reveal">
+    <table class="sched" role="table" aria-label="Weekly class schedule">
+  <colgroup><col style="width:22%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"></colgroup>
+  <thead><tr><th scope="col">Rank / Level</th><th scope="col">Monday</th><th scope="col">Tuesday</th><th scope="col">Wednesday</th><th scope="col">Thursday</th><th scope="col">Friday</th><th scope="col">Saturday</th><th scope="col">Sunday</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Foundations<br><small style="color:#64748b">Ages 4–6</small></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-slot kids">3:45 PM</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-slot kids">3:45 PM</span></td>
+      <td><span class="time-slot kids">10:30 AM</span></td>
+      <td><span class="time-empty">—</span></td>
+    </tr>
+    <tr>
+      <td>Freshman<br><small style="color:#64748b">White, Yellow, Yellow 1</small></td>
+      <td><span class="time-slot kids">3:30 PM</span></td>
+      <td><span class="time-slot kids">4:20 PM</span></td>
+      <td><span class="time-slot kids">5:10 PM</span></td>
+      <td><span class="time-slot kids">6:50 PM</span></td>
+      <td><span class="time-slot kids">4:20 PM</span></td>
+      <td><span class="time-slot kids">11:00 AM</span></td>
+      <td><span class="time-slot kids">12:30 PM</span></td>
+    </tr>
+    <tr>
+      <td>Sophomore<br><small style="color:#64748b">Orange, Orange 1, Green, Green 1</small></td>
+      <td><span class="time-slot kids">4:20 PM</span></td>
+      <td><span class="time-slot kids">5:10 PM</span></td>
+      <td><span class="time-slot kids">6:00 PM</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-slot kids">5:10 PM</span></td>
+      <td><span class="time-slot kids">11:50 AM</span></td>
+      <td><span class="time-slot kids">12:30 PM</span></td>
+    </tr>
+    <tr>
+      <td>Junior<br><small style="color:#64748b">Purple, Purple 1, Blue, Blue 1</small></td>
+      <td><span class="time-slot teens">5:10 PM</span></td>
+      <td><span class="time-slot teens">6:00 PM</span></td>
+      <td><span class="time-slot teens">3:30 PM</span></td>
+      <td><span class="time-slot teens">4:20 PM</span></td>
+      <td><span class="time-slot teens">6:00 PM</span></td>
+      <td><span class="time-slot teens">11:50 AM</span></td>
+      <td><span class="time-slot teens">1:20 PM</span></td>
+    </tr>
+    <tr>
+      <td>Senior<br><small style="color:#64748b">Brown, Brown 1, Red, Red/Black</small></td>
+      <td><span class="time-slot teens">6:00 PM</span></td>
+      <td><span class="time-slot teens">6:50 PM</span></td>
+      <td><span class="time-slot teens">4:20 PM</span></td>
+      <td><span class="time-slot teens">6:00 PM</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-slot teens">12:40 PM</span></td>
+      <td><span class="time-slot teens">1:20 PM</span></td>
+    </tr>
+    <tr>
+      <td>Graduates<br><small style="color:#64748b">Black Belt</small></td>
+      <td><span class="time-slot adult">6:50 PM</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-slot adult">5:10 PM</span></td>
+      <td><span class="time-slot adult">6:50 PM</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-empty">—</span></td>
+    </tr>
+    <tr>
+      <td>Teen/Adult<br><small style="color:#64748b">Ages 12 &amp; up, all ranks</small></td>
+      <td><span class="time-slot adult">7:40 PM</span></td>
+      <td><span class="time-slot adult">7:40 PM</span></td>
+      <td><span class="time-slot adult">6:50 PM</span></td>
+      <td><span class="time-slot adult">7:40 PM</span></td>
+      <td><span class="time-slot adult">7:40 PM</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-slot adult">11:30 AM</span></td>
+    </tr>
+    <tr>
+      <td>Instructor Training</td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-slot">7:40 PM</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-empty">—</span></td>
+      <td><span class="time-empty">—</span></td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-top:1rem;font-size:.9rem;color:#64748b">Schedule is for reference purposes only. Students may not attend a class they are not registered for — please speak to a Senior Instructor to register. Schedule is subject to change; contact us to confirm current class times.</p>
+
+  </div>
+  
+
+  <div class="legend reveal">
+    <div class="legend-item"><div class="legend-dot" style="background:#fef3c7;border:1px solid #d97706"></div>Kid's Martial Arts</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#d1fae5;border:1px solid #059669"></div>Teen's Martial Arts</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#dbeafe;border:1px solid #3b82f6"></div>Adult Martial Arts</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fce7f3;border:1px solid #db2777"></div>After-School Program</div>
+    
+    
+  </div>
+</section>
+
+<div class="private-band reveal">
+  <div class="container">
+    <h2>Need a Different Time?</h2>
+    <p>We offer private and semi-private lessons by appointment. Perfect for busy schedules or accelerated learning.</p>
+    <button class="btn btn-primary" onclick="openModal('modal-trial')">Ask About Private Lessons</button>
+  </div>
+</div>
+
+<section class="sched-cta">
+  <h2>Ready to Get on the Mats?</h2>
+  <p>Your first class is completely free — no experience required.</p>
+  <div class="cta-pair">
+    <button class="btn btn-primary" onclick="openModal('modal-trial')">Book Free Trial</button>
+    <button class="btn btn-ghost" onclick="openModal('modal-kit')">Get Pricing Guide</button>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+      <img src="brand_assets/logo.png" alt="" aria-hidden="true" style="height:36px;width:auto" onerror="this.style.display='none'">
+        Vision Martial Arts Almaden
+      </a>
+      <p>Vision Martial Arts Almaden is San Jose's premier martial arts academy. We develop champions on and off the mats through world-class instruction and a supportive community.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#06101e" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        <a href="#" class="social-link" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.85a8.17 8.17 0 004.77 1.52V6.93a4.85 4.85 0 01-1-.24z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Programs</h3>
+      <ul>
+        <li><a href="program-1.html">Kid's Martial Arts</a></li>
+        <li><a href="program-2.html">Teen's Martial Arts</a></li>
+        <li><a href="program-3.html">Adult Martial Arts</a></li>
+
+        <li><a href="program-4.html">After-School Program</a></li>
+
+        
+
+        
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Useful Resources</h3>
+      <ul>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="#" onclick="openModal('modal-trial');return false">Book Free Trial</a></li>
+        <li><a href="#" onclick="openModal('modal-kit');return false">Pricing &amp; Schedule</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="index.html#instructors">Our Coaches</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <address style="font-style:normal">
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>6467 Almaden Expy<br>San Jose, CA 95120</div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:(408) 268-6639">(408) 268-6639</a></div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@visionmaca.com">info@visionmaca.com</a></div>
+        
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Vision Martial Arts Almaden. All rights reserved.</p>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Sitemap</a></div>
+  </div>
+</footer>
+
+<!-- Trial Modal -->
+<div class="modal-overlay" id="modal-trial" role="dialog" aria-modal="true" aria-labelledby="title-trial" onclick="closeOnOverlay(event,'modal-trial')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-trial')" aria-label="Close">×</button>
+    <div id="modal-trial-body">
+      <h2 class="modal-title" id="title-trial">Book Your Free Trial Today</h2>
+      <p class="modal-sub">No commitment. No experience needed. Just show up and try it free.</p>
+      <form class="modal-form" onsubmit="submitModal(event,'modal-trial','https://PLACEHOLDER-replace-before-build')">
+        <input type="hidden" name="lead_source" value="trial">
+        <div class="field"><label for="tr-name">Name</label><input id="tr-name" type="text" name="name" placeholder="Your full name" required autocomplete="name"></div>
+        <div class="field"><label for="tr-email">Email</label><input id="tr-email" type="email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+        <div class="field"><label for="tr-phone">Phone</label><input id="tr-phone" type="tel" name="phone" placeholder="(555) 555-5555" required autocomplete="tel"></div>
+        <div class="field"><label for="tr-program">Program</label><select id="tr-program" name="program"><option value="" disabled selected>Select a program…</option><option value="kids">Kids</option><option value="teens-adults">Teens &amp; Adults</option><option value="not-sure">Not Sure</option></select></div>
+        <p class="modal-consent">By submitting you agree to receive SMS messages from Vision Martial Arts Almaden. Reply STOP to unsubscribe. Msg &amp; data rates may apply. <a href="#">Privacy Policy</a>.</p>
+        <button type="submit" class="modal-submit">Reserve My Free Trial →</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-trial-success"><div class="success-icon">🥋</div><h3 class="success-title">You're Booked!</h3><p class="success-body">We'll be in touch within 24 hours to confirm your free trial!</p></div>
+  </div>
+</div>
+
+<!-- Starter Kit Modal -->
+<div class="modal-overlay" id="modal-kit" role="dialog" aria-modal="true" aria-labelledby="title-kit" onclick="closeOnOverlay(event,'modal-kit')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-kit')" aria-label="Close">×</button>
+    <div id="modal-kit-body">
+      <h2 class="modal-title" id="title-kit">Looking For Our Pricing?</h2>
+      <p class="modal-sub">Fill out the form below and one of our coaches will send you our pricing, class schedule, and EXCLUSIVE promo information for our classes.</p>
+      <form class="modal-form" onsubmit="submitModal(event,'modal-kit','https://PLACEHOLDER-replace-before-build')">
+        <input type="hidden" name="lead_source" value="starter_kit">
+        <div class="field"><label for="kit-name">Name</label><input id="kit-name" type="text" name="name" placeholder="Your full name" required autocomplete="name"></div>
+        <div class="field"><label for="kit-email">Email</label><input id="kit-email" type="email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+        <div class="field"><label for="kit-phone">Phone</label><input id="kit-phone" type="tel" name="phone" placeholder="(555) 555-5555" required autocomplete="tel"></div>
+        <div class="field"><label for="kit-program">Program</label><select id="kit-program" name="program"><option value="" disabled selected>Select a program…</option><option value="kids">Kids</option><option value="teens-adults">Teens &amp; Adults</option><option value="not-sure">Not Sure</option></select></div>
+        <p class="modal-consent">By submitting you agree to receive SMS messages from Vision Martial Arts Almaden. Reply STOP to unsubscribe. Msg &amp; data rates may apply. <a href="#">Privacy Policy</a>.</p>
+        <button type="submit" class="modal-submit">Send Me The Info →</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-kit-success"><div class="success-icon">📋</div><h3 class="success-title">On Its Way!</h3><p class="success-body">Check your inbox — we're sending our full pricing guide and schedule now.</p></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var nt=document.getElementById('nav-toggle'),mn=document.getElementById('main-nav');
+  if(nt&&mn){
+    nt.addEventListener('click',function(){var o=mn.classList.toggle('open');nt.classList.toggle('active',o);nt.setAttribute('aria-expanded',o?'true':'false')});
+    mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');nt.classList.remove('active');nt.setAttribute('aria-expanded','false')})});
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var t=null;
+    dd.addEventListener('mouseenter',function(){clearTimeout(t);dd.classList.add('open')});
+    dd.addEventListener('mouseleave',function(){t=setTimeout(function(){dd.classList.remove('open')},300)});
+  });
+  var hdr=document.getElementById('header');
+  window.addEventListener('scroll',function(){hdr.style.boxShadow=window.scrollY>10?'0 2px 28px rgba(0,0,0,.14)':'0 2px 20px rgba(0,0,0,.07)';},{passive:true});
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -36px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+  } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')}); }
+  window.openModal=function(id){var el=document.getElementById(id);if(!el)return;el.classList.add('open');document.body.style.overflow='hidden';var f=el.querySelector('input,select');if(f)setTimeout(function(){f.focus()},80)};
+  window.closeModal=function(id){var el=document.getElementById(id);if(!el)return;el.classList.remove('open');document.body.style.overflow=''};
+  window.closeOnOverlay=function(e,id){if(e.target===e.currentTarget)closeModal(id)};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(function(m){m.classList.remove('open')});document.body.style.overflow=''}});
+  window.submitModal=function(e,mid,url){
+    e.preventDefault();var form=e.target,data={};new FormData(form).forEach(function(v,k){data[k]=v});
+    var btn=form.querySelector('[type=submit]');btn.textContent='Sending…';btn.disabled=true;
+    if(url&&url.charAt(0)!=='[')fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});
+    setTimeout(function(){if(mid==='modal-trial'){window.location.href='https://PLACEHOLDER-replace-before-build';}else{var b=document.getElementById(mid+'-body'),s=document.getElementById(mid+'-success');if(b)b.style.display='none';if(s)s.style.display='block';}},550);
+  };
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News &amp; Updates | [SCHOOL_NAME] Martial Arts in [CITY]</title>
+  <meta name="description" content="Latest news, events, and updates from [SCHOOL_NAME] in [CITY]. Stay in the loop with our martial arts community.">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,'Helvetica Neue',Arial,sans-serif;color:#1a1a2e;line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{cursor:pointer;border:none;outline:none;font-family:inherit}
+    ul{list-style:none}
+    :root{
+      --primary:        [PRIMARY_COLOR];
+      --primary-dark:   color-mix(in srgb, [PRIMARY_COLOR] 80%, black);
+      --secondary:      [SECONDARY_COLOR];
+      --secondary-dark: color-mix(in srgb, [SECONDARY_COLOR] 80%, black);
+      --secondary-light:color-mix(in srgb, [SECONDARY_COLOR] 15%, white);
+      --red:var(--primary);--red-dark:var(--primary-dark);--blue:var(--secondary);--blue-dark:var(--secondary-dark);--blue-light:var(--secondary-light);
+      --dark:#0f172a;--dark-2:#1e293b;--gray:#64748b;
+      --gray-light:#e2e8f0;--light:#f8fafc;--white:#ffffff;
+      --radius:8px;--radius-lg:12px;
+      --shadow:0 4px 20px rgba(0,0,0,.10);--shadow-lg:0 8px 40px rgba(0,0,0,.15);
+      --transition:all .2s ease
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:var(--radius);font-size:16px;font-weight:700;text-align:center;transition:var(--transition);cursor:pointer;white-space:nowrap}
+    .btn-primary{background:var(--red);color:var(--white);border:2px solid var(--red)}
+    .btn-primary:hover{background:var(--red-dark);border-color:var(--red-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+    .btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7)}
+    .btn-ghost:hover{background:var(--white);color:var(--dark);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+    .btn-outline:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+    /* ── Header ── */
+    #header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--white);box-shadow:0 2px 20px rgba(0,0,0,.07);transition:box-shadow .3s}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+    .logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:900;color:var(--dark);white-space:nowrap;letter-spacing:-.4px;flex-shrink:0}
+    .logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .logo-icon svg{width:22px;height:22px;fill:white}
+    #main-nav{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+    #main-nav>a,.nav-dropdown>a{padding:8px 13px;border-radius:6px;font-weight:600;font-size:15px;color:var(--dark-2);transition:var(--transition);display:flex;align-items:center;gap:4px}
+    #main-nav>a:hover,.nav-dropdown>a:hover{background:var(--light);color:var(--blue)}
+    .nav-dropdown{position:relative}
+    .nav-dropdown>a::after{content:'▾';font-size:10px;opacity:.7}
+    .dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);background:var(--white);border-radius:10px;box-shadow:var(--shadow-lg);min-width:210px;padding:8px;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+    .nav-dropdown.open .dropdown-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+    .dropdown-menu a{display:block;padding:10px 14px;border-radius:6px;font-size:14px;font-weight:500;color:var(--dark-2);transition:var(--transition)}
+    .dropdown-menu a:hover{background:var(--light);color:var(--blue)}
+    .header-cta{padding:10px 22px;font-size:15px;flex-shrink:0}
+    .nav-toggle{display:none;background:none;border:none;padding:8px;flex-direction:column;gap:5px}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--dark);transition:.3s;border-radius:2px}
+    .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle.active span:nth-child(2){opacity:0}
+    .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    @media(max-width:900px){
+      #main-nav{display:none;flex-direction:column;align-items:flex-start;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:12px 20px 20px;box-shadow:var(--shadow-lg);border-top:1px solid var(--gray-light);gap:2px}
+      #main-nav.open{display:flex}
+      #main-nav>a,.nav-dropdown>a{width:100%}
+      .nav-dropdown .dropdown-menu{position:static;opacity:1;pointer-events:all;transform:none;box-shadow:none;border-left:3px solid var(--blue-light);border-radius:0;padding:4px 0 4px 12px;min-width:auto}
+      .nav-toggle{display:flex}
+      .header-cta{display:none}
+    }
+    /* ── Page banner ── */
+    .page-banner{background:linear-gradient(135deg,#07101e 0%,#1a3a6e 100%);color:white;padding:130px 24px 64px;text-align:center}
+    .page-banner h1{font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:14px}
+    .page-banner p{font-size:18px;opacity:.8;max-width:600px;margin:0 auto}
+    /* ── Blog section ── */
+    #blog{padding:72px 24px}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;max-width:1100px;margin:0 auto}
+    /* ── Article card ── */
+    .article-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}
+    .article-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .article-photo{height:220px;position:relative;overflow:hidden}
+    /* SWAP: replace .article-photo div with <img src="news-N.jpg" alt="[Article title]" loading="lazy" style="width:100%;height:100%;object-fit:cover"> */
+    .article-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .article-photo-placeholder svg{width:48px;height:48px;fill:rgba(255,255,255,.4)}
+    .article-tag{position:absolute;top:14px;left:14px;background:var(--blue);color:white;font-size:12px;font-weight:700;padding:4px 10px;border-radius:4px;text-transform:uppercase;letter-spacing:.6px}
+    .article-body{padding:24px}
+    .article-meta{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+    .article-date{font-size:13px;color:var(--gray);font-weight:500}
+    .article-author{font-size:13px;color:var(--gray)}
+    .article-author::before{content:'·';margin-right:14px}
+    .article-title{font-size:20px;font-weight:800;color:var(--dark);line-height:1.3;margin-bottom:10px}
+    .article-excerpt{font-size:14px;color:var(--gray);line-height:1.75;margin-bottom:20px}
+    .article-read-more{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);transition:gap .2s}
+    .article-read-more:hover{gap:10px}
+    .article-read-more svg{width:16px;height:16px;fill:var(--blue)}
+    /* ── Featured article (first card full-width) ── */
+    .article-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+    .article-card.featured .article-photo{height:100%;min-height:280px}
+    @media(max-width:700px){.article-card.featured{grid-column:auto;display:block}.article-card.featured .article-photo{height:220px}}
+    /* ── Sidebar newsletter strip ── */
+    .newsletter-strip{background:var(--blue-light);border-radius:var(--radius-lg);padding:36px 32px;text-align:center;max-width:1100px;margin:48px auto 0}
+    .newsletter-strip h3{font-size:22px;font-weight:800;color:var(--dark);margin-bottom:8px}
+    .newsletter-strip p{font-size:15px;color:var(--gray);margin-bottom:22px}
+    .newsletter-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .newsletter-form input{flex:1;min-width:200px;padding:12px 14px;border-radius:var(--radius);border:1.5px solid var(--gray-light);font-size:15px;font-family:inherit;color:var(--dark)}
+    .newsletter-form input:focus{outline:none;border-color:var(--blue)}
+    .newsletter-form button{padding:12px 22px;background:var(--blue);color:white;border-radius:var(--radius);font-weight:700;font-size:15px;border:none;cursor:pointer;transition:var(--transition);font-family:inherit}
+    .newsletter-form button:hover{background:var(--blue-dark)}
+    /* ── CTA ── */
+    .news-cta{background:linear-gradient(135deg,#07101e,#1a3a6e);padding:80px 24px;text-align:center;color:white;margin-top:72px}
+    .news-cta h2{font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:14px}
+    .news-cta p{font-size:18px;opacity:.8;margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto}
+    .cta-pair{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    @media(max-width:480px){.cta-pair{flex-direction:column;align-items:stretch}.cta-pair .btn{width:100%}}
+    /* ── Scroll reveal ── */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    /* ── Footer ── */
+    #footer{background:#06101e;color:rgba(255,255,255,.72);padding:64px 24px 28px}
+    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:48px;max-width:1200px;margin:0 auto 52px}
+    @media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px}}
+    @media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand .logo{color:white;margin-bottom:16px}
+    .footer-brand p{font-size:14px;line-height:1.75;opacity:.65;margin-bottom:22px}
+    .social-links{display:flex;gap:10px}
+    .social-link{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+    .social-link:hover{background:var(--blue)}
+    .social-link svg{width:17px;height:17px;fill:white}
+    .footer-col h3{font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:18px}
+    .footer-col ul li{margin-bottom:10px}
+    .footer-col ul li a{font-size:14px;transition:color .2s}
+    .footer-col ul li a:hover{color:white}
+    .footer-contact-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:14px;line-height:1.55}
+    .footer-contact-row svg{width:16px;height:16px;fill:#60a5fa;flex-shrink:0;margin-top:2px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.09);padding-top:24px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .footer-bottom p{font-size:13px;opacity:.55}
+    .footer-legal{display:flex;gap:20px}
+    .footer-legal a{font-size:13px;opacity:.45;transition:opacity .2s}
+    .footer-legal a:hover{opacity:1}
+    /* ── Modals ── */
+    .modal-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease}
+    .modal-overlay.open{opacity:1;pointer-events:all}
+    .modal-box{background:var(--white);border-radius:16px;padding:44px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.95) translateY(20px);transition:transform .3s ease;position:relative}
+    .modal-overlay.open .modal-box{transform:scale(1) translateY(0)}
+    .modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:var(--light);border:none;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;color:var(--gray);cursor:pointer;transition:var(--transition)}
+    .modal-close:hover{background:var(--gray-light);color:var(--dark)}
+    .modal-title{font-size:24px;font-weight:800;color:var(--dark);margin-bottom:6px}
+    .modal-sub{font-size:15px;color:var(--gray);margin-bottom:28px}
+    .modal-form .field{margin-bottom:16px}
+    .modal-form label{display:block;font-size:14px;font-weight:600;color:var(--dark-2);margin-bottom:6px}
+    .modal-form input,.modal-form select{width:100%;padding:12px 14px;border-radius:var(--radius);border:1.5px solid var(--gray-light);font-size:15px;font-family:inherit;color:var(--dark);background:var(--white);transition:border-color .2s;appearance:none}
+    .modal-form input:focus,.modal-form select:focus{outline:none;border-color:var(--blue)}
+    .modal-consent{font-size:12px;color:var(--gray);margin:10px 0 20px;line-height:1.55}
+    .modal-consent a{color:var(--blue)}
+    .modal-submit{width:100%;padding:15px;background:var(--blue);color:white;border:none;border-radius:var(--radius);font-size:17px;font-weight:700;cursor:pointer;transition:var(--transition);font-family:inherit}
+    .modal-submit:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,99,235,.35)}
+    .modal-success{text-align:center;padding:36px 20px;display:none}
+    .success-icon{font-size:56px;margin-bottom:16px}
+    .success-title{font-size:24px;font-weight:800;color:var(--dark);margin-bottom:10px}
+    .success-body{color:var(--gray);font-size:16px;line-height:1.6}
+    @media(max-width:768px){.modal-box{padding:28px 20px}}
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="[LOGO_IMAGE]" alt="" aria-hidden="true" height="48" style="height:48px;width:auto;display:block">
+      </a>
+      <nav id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#" onclick="openModal('modal-kit');return false">Pricing</a>
+        <div class="nav-dropdown">
+          <a href="programs.html">Programs</a>
+          <div class="dropdown-menu">
+            <a href="program-1.html">[PROGRAM_1_NAME]</a>
+            <!-- [IF:PROGRAM_2_NAME] --><a href="program-2.html">[PROGRAM_2_NAME]</a><!-- [/IF:PROGRAM_2_NAME] -->
+            <!-- [IF:PROGRAM_3_NAME] --><a href="program-3.html">[PROGRAM_3_NAME]</a><!-- [/IF:PROGRAM_3_NAME] -->
+
+            <!-- [IF:PROGRAM_4_NAME] --><a href="program-4.html">[PROGRAM_4_NAME]</a><!-- [/IF:PROGRAM_4_NAME] -->
+
+            <!-- [IF:PROGRAM_5_NAME] --><a href="program-5.html">[PROGRAM_5_NAME]</a><!-- [/IF:PROGRAM_5_NAME] -->
+
+            <!-- [IF:PROGRAM_6_NAME] --><a href="program-6.html">[PROGRAM_6_NAME]</a><!-- [/IF:PROGRAM_6_NAME] -->
+          </div>
+        </div>
+        <a href="quick-tour.html">Quick Tour</a>
+        <div class="nav-dropdown">
+          <a href="#">More</a>
+          <div class="dropdown-menu">
+            <a href="schedules.html">Member Schedules</a>
+            <a href="news.html">News</a>
+          </div>
+        </div>
+      </nav>
+      <button class="btn btn-primary header-cta" onclick="openModal('modal-trial')">Get Started</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-banner">
+  <h1>News &amp; Updates</h1>
+  <p>Stay connected with everything happening at [SCHOOL_NAME] — events, milestones, and community stories.</p>
+</section>
+
+<section id="blog">
+  <div class="container">
+    <div class="blog-grid">
+      <!-- Articles will appear here once published — check back soon! -->
+      <p style="text-align:center;color:#64748b;padding:48px 0;font-size:16px;grid-column:1/-1">
+        Articles coming soon.<!-- [IF:FACEBOOK_URL] --> Follow us on <a href="[FACEBOOK_URL]" style="color:#2563eb">Facebook</a><!-- [/IF:FACEBOOK_URL] --><!-- [IF:INSTAGRAM_URL] --> and <a href="[INSTAGRAM_URL]" style="color:#2563eb">Instagram</a><!-- [/IF:INSTAGRAM_URL] --><!-- [IF:FACEBOOK_URL] --> for the latest updates.<!-- [/IF:FACEBOOK_URL] -->
+      </p>
+    </div>
+
+    <!-- Newsletter opt-in -->
+    <div class="newsletter-strip reveal">
+      <h3>Stay in the Loop</h3>
+      <p>Get school news, event announcements, and exclusive offers delivered to your inbox.</p>
+      <form class="newsletter-form" onsubmit="submitNewsletter(event)">
+        <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="news-cta">
+  <h2>See It For Yourself</h2>
+  <p>Words on a page only go so far. Come in, meet the team, and try a free class.</p>
+  <div class="cta-pair">
+    <button class="btn btn-primary" onclick="openModal('modal-trial')">Book Free Trial</button>
+    <button class="btn btn-ghost" onclick="openModal('modal-kit')">Get Pricing Guide</button>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+      <img src="[LOGO_IMAGE]" alt="" aria-hidden="true" style="height:36px;width:auto" onerror="this.style.display='none'">
+        [SCHOOL_NAME]
+      </a>
+      <p>[SCHOOL_NAME] is [CITY]'s premier martial arts academy. We develop champions on and off the mats through world-class instruction and a supportive community.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#06101e" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        <a href="#" class="social-link" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.85a8.17 8.17 0 004.77 1.52V6.93a4.85 4.85 0 01-1-.24z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Programs</h3>
+      <ul>
+        <li><a href="program-1.html">[PROGRAM_1_NAME]</a></li>
+        <!-- [IF:PROGRAM_2_NAME] --><li><a href="program-2.html">[PROGRAM_2_NAME]</a></li><!-- [/IF:PROGRAM_2_NAME] -->
+        <!-- [IF:PROGRAM_3_NAME] --><li><a href="program-3.html">[PROGRAM_3_NAME]</a></li><!-- [/IF:PROGRAM_3_NAME] -->
+
+        <!-- [IF:PROGRAM_4_NAME] --><li><a href="program-4.html">[PROGRAM_4_NAME]</a></li><!-- [/IF:PROGRAM_4_NAME] -->
+
+        <!-- [IF:PROGRAM_5_NAME] --><li><a href="program-5.html">[PROGRAM_5_NAME]</a></li><!-- [/IF:PROGRAM_5_NAME] -->
+
+        <!-- [IF:PROGRAM_6_NAME] --><li><a href="program-6.html">[PROGRAM_6_NAME]</a></li><!-- [/IF:PROGRAM_6_NAME] -->
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Useful Resources</h3>
+      <ul>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="#" onclick="openModal('modal-trial');return false">Book Free Trial</a></li>
+        <li><a href="#" onclick="openModal('modal-kit');return false">Pricing &amp; Schedule</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="index.html#instructors">Our Coaches</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <address style="font-style:normal">
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>[ADDRESS_LINE_1]<br>[CITY], [STATE] [ZIP]</div>
+        <div class="footer-contact-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:[PHONE]">[PHONE]</a></div>
+        <!-- [IF:EMAIL] --><div class="footer-contact-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:[EMAIL]">[EMAIL]</a></div><!-- [/IF:EMAIL] -->
+        <!-- [IF:HOURS_SHORT] --><div class="footer-contact-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>[HOURS_SHORT]</div><!-- [/IF:HOURS_SHORT] -->
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© [CURRENT_YEAR] [SCHOOL_NAME]. All rights reserved.</p>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Sitemap</a></div>
+  </div>
+</footer>
+
+<!-- Trial Modal -->
+<div class="modal-overlay" id="modal-trial" role="dialog" aria-modal="true" aria-labelledby="title-trial" onclick="closeOnOverlay(event,'modal-trial')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-trial')" aria-label="Close">×</button>
+    <div id="modal-trial-body">
+      <h2 class="modal-title" id="title-trial">Book Your Free Trial Today</h2>
+      <p class="modal-sub">No commitment. No experience needed. Just show up and try it free.</p>
+      <form class="modal-form" onsubmit="submitModal(event,'modal-trial','[TRIAL_WEBHOOK_URL]')">
+        <input type="hidden" name="lead_source" value="trial">
+        <div class="field"><label for="tr-name">Name</label><input id="tr-name" type="text" name="name" placeholder="Your full name" required autocomplete="name"></div>
+        <div class="field"><label for="tr-email">Email</label><input id="tr-email" type="email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+        <div class="field"><label for="tr-phone">Phone</label><input id="tr-phone" type="tel" name="phone" placeholder="(555) 555-5555" required autocomplete="tel"></div>
+        <div class="field"><label for="tr-program">Program</label><select id="tr-program" name="program"><option value="" disabled selected>Select a program…</option><option value="kids">Kids</option><option value="teens-adults">Teens &amp; Adults</option><option value="not-sure">Not Sure</option></select></div>
+        <p class="modal-consent">By submitting you agree to receive SMS messages from [SCHOOL_NAME]. Reply STOP to unsubscribe. Msg &amp; data rates may apply. <a href="#">Privacy Policy</a>.</p>
+        <button type="submit" class="modal-submit">Reserve My Free Trial →</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-trial-success"><div class="success-icon">🥋</div><h3 class="success-title">You're Booked!</h3><p class="success-body">We'll be in touch within 24 hours to confirm your free trial!</p></div>
+  </div>
+</div>
+
+<!-- Starter Kit Modal -->
+<div class="modal-overlay" id="modal-kit" role="dialog" aria-modal="true" aria-labelledby="title-kit" onclick="closeOnOverlay(event,'modal-kit')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-kit')" aria-label="Close">×</button>
+    <div id="modal-kit-body">
+      <h2 class="modal-title" id="title-kit">Looking For Our Pricing?</h2>
+      <p class="modal-sub">Fill out the form below and one of our coaches will send you our pricing, class schedule, and EXCLUSIVE promo information for our classes.</p>
+      <form class="modal-form" onsubmit="submitModal(event,'modal-kit','[STARTER_KIT_WEBHOOK_URL]')">
+        <input type="hidden" name="lead_source" value="starter_kit">
+        <div class="field"><label for="kit-name">Name</label><input id="kit-name" type="text" name="name" placeholder="Your full name" required autocomplete="name"></div>
+        <div class="field"><label for="kit-email">Email</label><input id="kit-email" type="email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+        <div class="field"><label for="kit-phone">Phone</label><input id="kit-phone" type="tel" name="phone" placeholder="(555) 555-5555" required autocomplete="tel"></div>
+        <div class="field"><label for="kit-program">Program</label><select id="kit-program" name="program"><option value="" disabled selected>Select a program…</option><option value="kids">Kids</option><option value="teens-adults">Teens &amp; Adults</option><option value="not-sure">Not Sure</option></select></div>
+        <p class="modal-consent">By submitting you agree to receive SMS messages from [SCHOOL_NAME]. Reply STOP to unsubscribe. Msg &amp; data rates may apply. <a href="#">Privacy Policy</a>.</p>
+        <button type="submit" class="modal-submit">Send Me The Info →</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-kit-success"><div class="success-icon">📋</div><h3 class="success-title">On Its Way!</h3><p class="success-body">Check your inbox — we're sending our full pricing guide and schedule now.</p></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var nt=document.getElementById('nav-toggle'),mn=document.getElementById('main-nav');
+  if(nt&&mn){
+    nt.addEventListener('click',function(){var o=mn.classList.toggle('open');nt.classList.toggle('active',o);nt.setAttribute('aria-expanded',o?'true':'false')});
+    mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');nt.classList.remove('active');nt.setAttribute('aria-expanded','false')})});
+  }
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var t=null;
+    dd.addEventListener('mouseenter',function(){clearTimeout(t);dd.classList.add('open')});
+    dd.addEventListener('mouseleave',function(){t=setTimeout(function(){dd.classList.remove('open')},300)});
+  });
+  var hdr=document.getElementById('header');
+  window.addEventListener('scroll',function(){hdr.style.boxShadow=window.scrollY>10?'0 2px 28px rgba(0,0,0,.14)':'0 2px 20px rgba(0,0,0,.07)';},{passive:true});
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -36px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+  } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')}); }
+  window.openModal=function(id){var el=document.getElementById(id);if(!el)return;el.classList.add('open');document.body.style.overflow='hidden';var f=el.querySelector('input,select');if(f)setTimeout(function(){f.focus()},80)};
+  window.closeModal=function(id){var el=document.getElementById(id);if(!el)return;el.classList.remove('open');document.body.style.overflow=''};
+  window.closeOnOverlay=function(e,id){if(e.target===e.currentTarget)closeModal(id)};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(function(m){m.classList.remove('open')});document.body.style.overflow=''}});
+  window.submitModal=function(e,mid,url){
+    e.preventDefault();var form=e.target,data={};new FormData(form).forEach(function(v,k){data[k]=v});
+    var btn=form.querySelector('[type=submit]');btn.textContent='Sending…';btn.disabled=true;
+    if(url&&url.charAt(0)!=='[')fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});
+    setTimeout(function(){if(mid==='modal-trial'){window.location.href='[BOOKING_CALENDAR_URL]';}else{var b=document.getElementById(mid+'-body'),s=document.getElementById(mid+'-success');if(b)b.style.display='none';if(s)s.style.display='block';}},550);
+  };
+  window.submitNewsletter=function(e){
+    e.preventDefault();var btn=e.target.querySelector('button');btn.textContent='Subscribed!';btn.disabled=true;
+  };
+}());
+</script>
+</body>
+</html>

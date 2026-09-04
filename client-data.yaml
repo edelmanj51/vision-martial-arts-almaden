@@ -1,0 +1,252 @@
+# NOTE: CURRENT_YEAR is also computed automatically (same way as YEARS_COUNT)
+SLUG: "vision-martial-arts-almaden"
+
+# No Google Places API access during this build — no verified Place ID found.
+GOOGLE_PLACE_ID: ""
+
+# The client runs 2 schools (Almaden Valley + Silver Creek) off one shared
+# visionmaca.com site today. Per instructions, this build is Almaden ONLY —
+# Silver Creek gets its own separate Combat Boost site later. "Almaden" is
+# appended to the school name throughout to keep the two builds distinct,
+# matching the convention used for other multi-location clients (e.g.
+# premier-martial-arts-fleming-island).
+SCHOOL_NAME: "Vision Martial Arts Almaden"
+MARTIAL_ART: "Karate"
+
+# Client already owns almadenkarate.com — it currently 301-redirects to the
+# shared visionmaca.com (confirmed live), and is printed as this location's
+# own domain on its official schedule PDF letterhead. Strong signal it's the
+# intended eventual home for this dedicated Almaden site, but not switching
+# DNS unilaterally — using the Cloudflare Pages address until a cutover is
+# explicitly approved (same convention as tac-karate-fitness-chicago /
+# clifton-martial-arts-academy). Point almadenkarate.com here when ready.
+SITE_URL: "https://vision-martial-arts-almaden.pages.dev"
+DOMAIN: "vision-martial-arts-almaden.pages.dev"
+
+CITY: "San Jose"
+STATE: "CA"
+ZIP: "95120"
+ADDRESS_LINE_1: "6467 Almaden Expy"
+
+PHONE: "(408) 268-6639"
+EMAIL: "info@visionmaca.com"
+
+# The location page's own "Hours" blurb (Mon-Fri 3-8pm, Sat 9am-2pm, Sun
+# 3-8pm) doesn't match the actual published class schedule (no Sunday
+# classes after 12:30pm, no Saturday classes past 1:20pm) — the schedule PDF
+# is the more authoritative, detailed, and recently-dated source, so HOURS
+# reflects its real outer bounds instead.
+HOURS: "Mon–Fri 3:30pm–7:40pm · Sat 10:30am–1:20pm · Sun 11:30am–12:30pm"
+
+# Site footer/about copy: "Since 2014."
+YEAR_FOUNDED: "2014"
+
+# Red sampled from the client's own logo (brand_assets/logo.png) and its
+# site's own CTA bar background (#ed1c24); near-black from the logo's "V".
+PRIMARY_COLOR: "#ED1C24"
+SECONDARY_COLOR: "#1A1A1A"
+LOGO_IMAGE: brand_assets/logo.png
+# Almaden's own Facebook page (Silver Creek has a separate one, "SilverCreekKarate").
+FACEBOOK_URL: "https://www.facebook.com/Visionmaca/"
+INSTAGRAM_URL: ""
+
+HERO_IMAGE: images/hero/hero.jpg
+HERO_HEADLINE: "Leaders & Champions Are Made… Not Born!"
+HERO_SUBHEADLINE: "Almaden Valley's Martial Arts Academy for Kids, Teens & Adults"
+HERO_SUBTEXT: "Since 2014, Vision Martial Arts has helped Almaden Valley families build confidence, self-discipline, and real self-defense skills — enhancing life, one class at a time, for kids, teens, and adults alike."
+
+# No verified Google rating specific to the Almaden location — the shared
+# visionmaca.com site pulls testimonials from a mixed carousel (Facebook and
+# Google reviews spanning both campuses, some naming a third-party "Willow
+# Glen" location entirely), and third-party listings for "Vision Martial
+# Arts" show inconsistent addresses. Proof bar stays hidden rather than
+# reporting a number that isn't confirmed as this location's own Google
+# rating. Same placeholder convention already shipped on
+# tac-karate-fitness-chicago / clifton-martial-arts-academy.
+SHOW_PROOF_BAR: "false"
+STAR_RATING: "5.0"
+REVIEW_COUNT: "0"
+
+ABOUT_TEXT: "Vision Martial Arts has been Almaden Valley's home for character-driven martial arts training since 2014. Guided by the belief that leaders and champions are made, not born, our instructors help kids, teens, and adults build confidence, self-discipline, and real self-defense skills — because how you do anything is how you do everything."
+
+# Kevin Waldschmidt is independently confirmed (business listings + LinkedIn)
+# as the owner/head instructor at this specific Almaden phone number; real
+# customer reviews on the client's own site refer to him as "Master
+# Waldschmidt." No individual headshot of him was recoverable anywhere on
+# the client's site, so INSTRUCTOR_1_PHOTO uses a real (not stock) photo of
+# adult students training at a Vision Martial Arts location instead of a
+# generic stock photo. Swap in his actual headshot if the client provides one.
+INSTRUCTOR_1_NAME: "Kevin Waldschmidt"
+INSTRUCTOR_1_PHOTO: images/instructors/instructor-1/main.jpg
+INSTRUCTOR_1_TITLE: "Owner & Head Instructor"
+INSTRUCTOR_1_BIO: "Kevin Waldschmidt is the owner and head instructor of Vision Martial Arts Almaden — known to generations of students simply as \"Master Waldschmidt.\" Since founding the school in 2014, he's built a program that puts as much emphasis on character as it does on technique, helping kids, teens, and adults become more confident, disciplined, and capable versions of themselves."
+
+# 4 programs below are the client's own real program taxonomy (Kid's / Teen's
+# / Adult / After-School Martial Arts, straight from the site nav). The real
+# published schedule (Almaden-2026-Fall.pdf) is organized by belt-rank tier
+# (Foundations/Freshman/Sophomore/.../Teen-Adult), not by these 4 marketing
+# programs — notably "Teen/Adult" runs as one combined class for ages 12+,
+# even though Teens and Adults are marketed as separate programs — so
+# PROGRAM_N_DAYS points to the full real schedule rather than implying a
+# false 1:1 mapping. PROGRAM_2_PHOTO (Teens) and PROGRAM_4_PHOTO
+# (After-School) are the client's own stock photography (their program pages
+# use generic stock there, not real studio photos) — flagged here rather
+# than passed off as authentic candids; Kids and Adults use real photos from
+# the client's own site.
+PROGRAM_1_NAME: "Kid's Martial Arts"
+PROGRAM_1_PHOTO: images/programs/program-1/main.jpg
+PROGRAM_1_AGE_RANGE: "Ages 4–11"
+PROGRAM_1_DAYS: "6 days a week — see full class schedule"
+PROGRAM_1_DESCRIPTION: "Give your kids the lifelong gifts of personal success and confidence. Through a structured belt system and activities, games, and drills that disguise the repetition of real training, kids build focus, discipline, respect, and self-defense skills — with a healthy balance of serious learning and fun."
+PROGRAM_1_AUDIENCE_KIDS: "1"
+PROGRAM_1_CTA_LABEL: "Book Free Trial"
+PROGRAM_1_CTA_HEADING: "Your First Class Is Free."
+
+PROGRAM_2_NAME: "Teen's Martial Arts"
+PROGRAM_2_PHOTO: images/programs/program-2/main.jpg
+PROGRAM_2_AGE_RANGE: "Ages 12–17"
+PROGRAM_2_DAYS: "6 days a week — see full class schedule"
+PROGRAM_2_DESCRIPTION: "A positive alternative to negative teenage habits — our teen program builds discipline, respect, and persistence while addressing real issues like bullying, self-esteem, and screen-time sedentary habits. Teens leave every class more confident, more self-assured, and physically stronger."
+PROGRAM_2_AUDIENCE_TEENS: "1"
+PROGRAM_2_CTA_LABEL: "Book Free Trial"
+PROGRAM_2_CTA_HEADING: "Your First Class Is Free."
+
+PROGRAM_3_NAME: "Adult Martial Arts"
+PROGRAM_3_PHOTO: images/programs/program-3/main.jpg
+PROGRAM_3_AGE_RANGE: "Ages 18 & Up"
+PROGRAM_3_DAYS: "6 days a week — see full class schedule"
+PROGRAM_3_DESCRIPTION: "A real alternative to the traditional gym workout. Build core strength and cardiovascular fitness, learn practical self-defense, and relieve stress in a social, structured environment — accessible regardless of your prior athletic experience, whether you're brand new to training or coming back after years away."
+PROGRAM_3_AUDIENCE_ADULTS: "1"
+PROGRAM_3_CTA_LABEL: "Book Free Trial"
+PROGRAM_3_CTA_HEADING: "Your First Class Is Free."
+
+PROGRAM_4_NAME: "After-School Program"
+PROGRAM_4_PHOTO: images/programs/program-4/main.jpg
+PROGRAM_4_AGE_RANGE: "Elementary Ages"
+PROGRAM_4_DAYS: "Williams (Tue) · Graystone (Wed) · Los Alamitos (Thu) · Simonds (Fri)"
+PROGRAM_4_DESCRIPTION: "A safe, structured after-school program held on-site at 4 local elementary schools — Williams, Graystone, Los Alamitos, and Simonds. Kids get age-appropriate martial arts instruction, make friends across schools, and build the respect, discipline, and perseverance that carry over into the classroom."
+PROGRAM_4_AUDIENCE_KIDS: "1"
+PROGRAM_4_CTA_LABEL: "Book an Introductory Call"
+PROGRAM_4_CTA_HEADING: "Book Your Introductory Call."
+
+# 3 real Google reviews sourced verbatim from the client's own homepage
+# testimonial carousel (tagged "google" in its own markup, distinct from the
+# Facebook-sourced ones on the same page) — none of these name a specific
+# competing location, unlike a 4th review on the same carousel that names a
+# third "Willow Glen" location by name (excluded for that reason). No
+# per-review date was available from the source.
+REVIEWER_1_NAME: "Karen Stevens"
+REVIEWER_1_DATE: "Google Review"
+REVIEWER_1_TEXT: "Vision Martial Arts puts a great deal of emphasis on what many schools look at as the \"positive side effects\" of being in martial arts... at Vision its the focus to develop kids who are confident, self-assured, strong and determined - and to do it through learning and mastering martial arts. Master LeMat is fantastic at teaching kids self-discipline through positive learning experiences. All of the senior instructors are great - my kids enjoy every one of them. But I do need to say a special thank you to Mr. Karim who has made both of my kids believe they can get to black belt through his encouragement and thoughtful teaching style."
+
+REVIEWER_2_NAME: "Shikha Gupta"
+REVIEWER_2_DATE: "Google Review"
+REVIEWER_2_TEXT: "This is a great Martial Arts studio. They don't just teach karate, but also other qualities like confidence, discipline and respect. My kid has been here for almost a year and progressed very well. The instructors are amazing and the lessons are a great balance between serious learning and fun time. Highly recommend Vision Martial Arts for everyone — kids or adults."
+
+REVIEWER_3_NAME: "Valerie Nygaard"
+REVIEWER_3_DATE: "Google Review"
+REVIEWER_3_TEXT: "Peter R-M has a gift. I saw him teach a class this evening with 9 elementary school boys, and he held their attention and respect throughout the hour in such a lovely way. He was charismatic and fun, but all with an undertone of discipline. His instruction was clear, and the mix of basics, challenges, drills and games felt thoughtful and intentional. If a child was momentarily disruptive, Mr. R-M provided an immediate but respectful correction. When I asked my very active 7 year old how he felt after class, he said, \"Calm. You said we can go back Saturday. How many days away is that?\" Enough said."
+
+# Full weekly schedule transcribed from the client's own published PDF
+# (Almaden-2026-Fall.pdf, dated August 16th, 2026), organized by belt-rank
+# tier exactly as the client publishes it — not remapped to the 4 marketing
+# programs above (see note there). One correction: the source PDF's Junior
+# row lists Saturday as "11:50 pm", which breaks the tier's own ascending
+# Saturday sequence (10:30am -> 11:00am -> 11:50am -> 12:40pm) and is clearly
+# a typo for "11:50 am" — corrected here rather than transcribed as printed.
+CLASS_SCHEDULE_HTML: |
+  <table class="sched" role="table" aria-label="Weekly class schedule">
+    <colgroup><col style="width:22%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"><col style="width:11.14%"></colgroup>
+    <thead><tr><th scope="col">Rank / Level</th><th scope="col">Monday</th><th scope="col">Tuesday</th><th scope="col">Wednesday</th><th scope="col">Thursday</th><th scope="col">Friday</th><th scope="col">Saturday</th><th scope="col">Sunday</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Foundations<br><small style="color:#64748b">Ages 4–6</small></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-slot kids">3:45 PM</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-slot kids">3:45 PM</span></td>
+        <td><span class="time-slot kids">10:30 AM</span></td>
+        <td><span class="time-empty">—</span></td>
+      </tr>
+      <tr>
+        <td>Freshman<br><small style="color:#64748b">White, Yellow, Yellow 1</small></td>
+        <td><span class="time-slot kids">3:30 PM</span></td>
+        <td><span class="time-slot kids">4:20 PM</span></td>
+        <td><span class="time-slot kids">5:10 PM</span></td>
+        <td><span class="time-slot kids">6:50 PM</span></td>
+        <td><span class="time-slot kids">4:20 PM</span></td>
+        <td><span class="time-slot kids">11:00 AM</span></td>
+        <td><span class="time-slot kids">12:30 PM</span></td>
+      </tr>
+      <tr>
+        <td>Sophomore<br><small style="color:#64748b">Orange, Orange 1, Green, Green 1</small></td>
+        <td><span class="time-slot kids">4:20 PM</span></td>
+        <td><span class="time-slot kids">5:10 PM</span></td>
+        <td><span class="time-slot kids">6:00 PM</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-slot kids">5:10 PM</span></td>
+        <td><span class="time-slot kids">11:50 AM</span></td>
+        <td><span class="time-slot kids">12:30 PM</span></td>
+      </tr>
+      <tr>
+        <td>Junior<br><small style="color:#64748b">Purple, Purple 1, Blue, Blue 1</small></td>
+        <td><span class="time-slot teens">5:10 PM</span></td>
+        <td><span class="time-slot teens">6:00 PM</span></td>
+        <td><span class="time-slot teens">3:30 PM</span></td>
+        <td><span class="time-slot teens">4:20 PM</span></td>
+        <td><span class="time-slot teens">6:00 PM</span></td>
+        <td><span class="time-slot teens">11:50 AM</span></td>
+        <td><span class="time-slot teens">1:20 PM</span></td>
+      </tr>
+      <tr>
+        <td>Senior<br><small style="color:#64748b">Brown, Brown 1, Red, Red/Black</small></td>
+        <td><span class="time-slot teens">6:00 PM</span></td>
+        <td><span class="time-slot teens">6:50 PM</span></td>
+        <td><span class="time-slot teens">4:20 PM</span></td>
+        <td><span class="time-slot teens">6:00 PM</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-slot teens">12:40 PM</span></td>
+        <td><span class="time-slot teens">1:20 PM</span></td>
+      </tr>
+      <tr>
+        <td>Graduates<br><small style="color:#64748b">Black Belt</small></td>
+        <td><span class="time-slot adult">6:50 PM</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-slot adult">5:10 PM</span></td>
+        <td><span class="time-slot adult">6:50 PM</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-empty">—</span></td>
+      </tr>
+      <tr>
+        <td>Teen/Adult<br><small style="color:#64748b">Ages 12 &amp; up, all ranks</small></td>
+        <td><span class="time-slot adult">7:40 PM</span></td>
+        <td><span class="time-slot adult">7:40 PM</span></td>
+        <td><span class="time-slot adult">6:50 PM</span></td>
+        <td><span class="time-slot adult">7:40 PM</span></td>
+        <td><span class="time-slot adult">7:40 PM</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-slot adult">11:30 AM</span></td>
+      </tr>
+      <tr>
+        <td>Instructor Training</td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-slot">7:40 PM</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-empty">—</span></td>
+        <td><span class="time-empty">—</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:1rem;font-size:.9rem;color:#64748b">Schedule is for reference purposes only. Students may not attend a class they are not registered for — please speak to a Senior Instructor to register. Schedule is subject to change; contact us to confirm current class times.</p>
+
+TRIAL_WEBHOOK_URL: "https://PLACEHOLDER-replace-before-build"
+STARTER_KIT_WEBHOOK_URL: "https://PLACEHOLDER-replace-before-build"
+QUIZ_WEBHOOK_URL: "https://PLACEHOLDER-replace-before-build"
+FINAL_CTA_WEBHOOK_URL: "https://PLACEHOLDER-replace-before-build"
+BOOKING_CALENDAR_URL: "https://PLACEHOLDER-replace-before-build"
+
+PRIVACY_POLICY_URL: "https://vision-martial-arts-almaden.pages.dev/privacy-policy"

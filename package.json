@@ -1,0 +1,15 @@
+{
+  "name": "combat-boost-v5",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "build":   "node fill-template.js",
+    "qc":      "node qc.js",
+    "preview": "npx serve dist -p 3000 --no-clipboard",
+    "full":    "node fill-template.js && node qc.js",
+    "check":   "node fill-template.js --check"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
