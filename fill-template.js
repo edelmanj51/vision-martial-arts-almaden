@@ -178,6 +178,18 @@ for (let n = 1; n <= 10; n++) {
   if (name) data[`R_${n}_INITIAL`] = String(name).charAt(0).toUpperCase();
 }
 
+// REVIEWER_N_SOURCE / _SOURCE_ICON / _SOURCE_COLOR — which platform a review
+// came from. Defaults to "Google" (matching every existing client build) so
+// nothing changes unless client-data.yaml sets REVIEWER_N_SOURCE: "Facebook"
+// for a review actually sourced from Facebook.
+for (let n = 1; n <= 10; n++) {
+  if (!data[`REVIEWER_${n}_NAME`]) continue;
+  if (!data[`REVIEWER_${n}_SOURCE`]) data[`REVIEWER_${n}_SOURCE`] = 'Google';
+  const isFacebook = data[`REVIEWER_${n}_SOURCE`] === 'Facebook';
+  data[`REVIEWER_${n}_SOURCE_ICON`]  = isFacebook ? 'f' : 'G';
+  data[`REVIEWER_${n}_SOURCE_COLOR`] = isFacebook ? '#1877F2' : '#4285f4';
+}
+
 // HAS_REVIEWERS — set if at least one reviewer exists (used to hide the whole testimonials section)
 if (data.REVIEWER_1_NAME) data.HAS_REVIEWERS = '1';
 
